@@ -1,0 +1,21 @@
+import javax.swing.*;
+
+public class Main {
+    public static void main(String[] args)
+    {
+
+        // GUI questions and inputs
+        String name = JOptionPane.showInputDialog("What is your name?");
+        JOptionPane.showMessageDialog(null,"Hello "+ name);
+
+        int age = Integer.parseInt(JOptionPane.showInputDialog("How old are you?"));
+        JOptionPane.showMessageDialog(null, "Looks like you are " +age+ ","
+                +name + "!");
+
+        String height = JOptionPane.showInputDialog("What is " +
+                "your height?");
+        JOptionPane.showMessageDialog(null, "You are "+ height+
+                " ft tall");
+
+    }
+}
