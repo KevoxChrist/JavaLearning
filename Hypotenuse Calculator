@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args)
+    {
+        //Empty variables for side x and y
+        double x;
+        double y;
+
+        /* "z" variable is the container for x & y that will display our hypotenuse,
+        based off the inputs of x & y
+         */
+        double z;
+
+        // Scanner to scan user inputs
+        Scanner scanner = new Scanner(System.in);
+
+        // Print statements for the user to input for x & y
+        System.out.println("Enter side x : ");
+        x = scanner.nextDouble();
+        System.out.println("Enter side y : ");
+        y = scanner.nextDouble();
+
+        // Using the Math class to calculate the hypotenuse of our variables (x & y)
+        z = Math.hypot(x,y);
+
+        /* Importing our variable "z" into a println statement, that will display
+        the calculation of our hypotenuse (x,y)
+        */
+        System.out.println("Your hypotenuse is : " + z);
+
+        scanner.close();
+
+    }
+}
