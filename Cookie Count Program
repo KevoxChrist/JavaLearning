@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args)
+    {
+        
+        Scanner scanner = new Scanner(System.in);
+        
+        // Our printed question & Scanner input for our question
+        System.out.println("How many cookies do you have?");
+        int cookiecount = scanner.nextInt();
+
+        // Responses and outcomes for the amount of cookies the User has
+        if (cookiecount==12) {
+            System.out.println("Looks like you have 12 cookies");
+        } else if (cookiecount>=100) {
+            System.out.println("COOKIE OVERLOAD MANNNNN!!!!");
+        } else if (cookiecount>=13) {
+                System.out.println("Woah dude, when did you get more cookies?");
+        } else if (cookiecount>=5) {
+            System.out.println("You have less than a dozen cookies");
+        } else if (cookiecount>=2) {
+            System.out.println("Less than 5 cookies? Someone must be hungry :P");
+        } else if (cookiecount<=0){
+            System.out.println("Hey, you have no cookies left :p ");
+        } else {
+            System.out.println("Looks like you gave all but one cookie away :)");
+        }
+
+    }
+}
