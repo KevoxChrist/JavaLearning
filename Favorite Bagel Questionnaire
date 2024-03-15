@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args)
+    {
+
+        Scanner scanner = new Scanner(System.in);
+
+        // Our printed question & Scanner input for our question
+        System.out.println("What is your favorite type of bagel?");
+        String bagels = scanner.nextLine();
+
+        // Switch statement for our possible inputs from the user's "Favorite type of bagels"
+        switch (bagels){
+            case "Blueberry":
+                System.out.println("Your favorite bagels are "+ bagels);
+                break;
+            case "Sesame" :
+                System.out.println("Hey you like "+ bagels+ "!");
+                break;
+            case "Everything" :
+                System.out.println("Everything bro?, That sure sounds like " +
+                        "everything!");
+                break;
+            default:
+                System.out.println(bagels +" is stellar choice my friend!");
+        }
+    }
+}
