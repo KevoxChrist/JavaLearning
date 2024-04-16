@@ -1,0 +1,38 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        //Prompts for our user to answer
+        System.out.println("Solve the following problem by your inputting the" +
+                " " +
+                "following prompts" +
+                ": √100 – √49");
+        System.out.println("Type ''yes'' to continue");
+        scanner.nextLine();
+
+        
+        //Variables to dump numbers in ("CALCULATOR" in a sense)
+        double x;
+        double y;
+        double z;
+        double z2;
+        double a;
+
+        // Input area for the numbers in the math problem
+        System.out.println("Enter the first square root: ");
+        x = scanner.nextInt();
+        System.out.println("Enter the second square root:");
+        y = scanner.nextInt();
+
+        // Allocation of variables for the overall answer to in up in Variable "a"
+        z = Math.sqrt(x);
+        z2 = Math.sqrt(y);
+        a = z - z2;
+
+        //Answer calculated (PRINTED)
+        System.out.println("Your answer is: " +a);
+
+        scanner.close();
