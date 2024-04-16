@@ -1,0 +1,52 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        //Prompts for our user to answer
+        System.out.println("Solve the following problem by your inputting into" +
+                " following prompts : √100 – √49");
+        System.out.println("Type ''yes'' to continue");
+        String yes;
+
+        // A Condition which we want to be true (a Typed answer of "yes")
+        // If true the program will continue.
+            while (true){
+                yes = scanner.next();
+                
+                // Stopping the program if the String (yes) equals "yes",
+                // based on user input
+                if (yes.equalsIgnoreCase("yes")){
+                break;
+            } else {
+            System.out.println("Invalid input, type ''yes'' to continue : ");
+        }
+            }
+
+        //variables to dump numbers in ("CALCULATOR" in a sense)
+        double x;
+        double y;
+        double z;
+        double z2;
+        double a;
+
+        // Input area for the numbers in the math problem
+        System.out.println("Enter the first square root: ");
+        x = scanner.nextInt();
+        System.out.println("Enter the second square root:");
+        y = scanner.nextInt();
+
+        // Allocation of variables for the overall answer to in up in Variable "a"
+        z = Math.sqrt(x);
+        z2 = Math.sqrt(y);
+        a = z - z2;
+
+        //Answer calculated (PRINTED)
+        System.out.println("Your answer is: " +a);
+
+        scanner.close();
+        
+    }
+}
