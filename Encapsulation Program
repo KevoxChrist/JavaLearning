@@ -23,7 +23,7 @@ public class Main {
     private String sidedish;
     private String drink;
 
-    // Object
+    // Constructor
     Plate(String Mmaindish,String Msidedish,String Mdrink){
 
         this.setMaindish(Mmaindish);
