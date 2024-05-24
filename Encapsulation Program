@@ -9,7 +9,6 @@ public class Main {
         plate.setDrink("Coffee");
         plate.setMaindish("Sausage Biscuit");
 
-        
         System.out.println("Here is what will be on your plate for Lunch: ");
         System.out.println("Main Dish: " + plate.getMaindish());
         System.out.println("Side Dish: " + plate.getSidedish());
