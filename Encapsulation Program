@@ -1,0 +1,54 @@
+
+public abstract class Main {
+    public static void main(String[] args) {
+
+        //Instance being called from the "Plate" Class 
+        Plate plate = new Plate("Chicken Sandwich","Fries", "Water");
+
+        //Changing Strings in plate object for "Maindish" & "Drink"
+        plate.setDrink("Coffee");
+        plate.setMaindish("Sausage Biscuit");
+
+        
+        System.out.println("Here is what will be on your plate for Lunch: ");
+        System.out.println("Main Dish: " + plate.getMaindish());
+        System.out.println("Side Dish: " + plate.getSidedish());
+        System.out.println("Drink: "+ plate.getDrink());
+
+    }
+}  class Plate {
+
+    //I made these private so that I could practice passing these through to a public class. You'll see getters and setters down below.
+    //Attributes
+    private String maindish;
+    private String sidedish;
+    private String drink;
+
+    // Object
+    Plate(String Mmaindish,String Msidedish,String Mdrink){
+
+        this.setMaindish(Mmaindish);
+        this.setSidedish(Msidedish);
+        this.setDrink(Mdrink);
+    }
+    //Get methods
+    public String getMaindish(){
+        return maindish;
+    }
+    public String getSidedish(){
+        return sidedish;
+    }
+    public String getDrink(){
+        return drink;
+    } 
+    //Set methods 
+    public void setMaindish(String smaindish){
+        this.maindish= smaindish;
+    }
+    public void setSidedish(String ssidedish){
+        this.sidedish= ssidedish;
+    }
+    public void setDrink(String sdrink){
+        this.drink= sdrink;
+    }
+}
