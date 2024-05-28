@@ -1,0 +1,121 @@
+public class Main {
+    public static void main(String[] args) {
+
+        Animal dog1 = new Animal("German Shepherd", "Male", 65, 12,
+                "House or Apartment with a yard (adaptable to various other " +
+                        "environments", "Omnivore");
+       /*Animal dog2 = new Animal("Eurasian Shepherd", "Female", 40, 12,
+                "Places where they are able to roam around (also adaptable to " +
+                       "various other environments)", "Omnivore");*/
+
+        //Copy constructor in our object "dog2"
+        Animal dog2 = new Animal(dog1);
+        /* We could use:
+         dog2.copy(dog1);
+         instead, which will copy the object (dog1) after we created an instance (dog2)
+         of the Animal class .*/
+
+        //dog1 info
+        System.out.println("Information about your animal: ");
+        System.out.println("Breed: "+dog1.getBreed());
+        System.out.println("Gender: "+dog1.getGender());
+        System.out.println("Weight: "+ dog1.getWeight()+"-90.0 lbs");
+        System.out.println("Lifespan: " +dog1.getLifespan()+ "-14 yrs");
+        System.out.println("Environment: "+ dog1.getEnvironment());
+        System.out.println("Diet: "+dog1.getDiet());
+        System.out.println();
+        //dog2 info
+        System.out.println("Information about your 2nd animal: ");
+        System.out.println("Breed: "+dog2.getBreed());
+        System.out.println("Gender: "+dog2.getGender());
+        System.out.println("Weight: "+ dog2.getWeight()+"-70.0 lbs");
+        System.out.println("Lifespan: " +dog2.getLifespan()+ "-14 yrs");
+        System.out.println("Environment: "+ dog2.getEnvironment());
+        System.out.println("Diet: "+dog2.getDiet());
+        System.out.println();
+        System.out.println("ID's: ");
+        System.out.println("Dog 1: "+dog1);
+        System.out.println("Dog 2: "+dog2);
+
+    }
+}
+public class Animal {
+
+    private String breed;
+    private String gender;
+    private double weight;
+    private int lifespan;
+    private String environment;
+    private String diet;
+
+  Animal (String breed, String gender,double weight, int lifespan,
+          String environment, String diet ){
+      this.setBreed(breed);
+      this.setGender(gender);
+      this.setWeight(weight);
+      this.setLifespan(lifespan);
+      this.setEnvironment(environment);
+      this.setDiet(diet);
+  }
+  //Copy "constructor"
+  Animal(Animal d){
+      this.copy(d);
+  }
+  //Get methods
+ /*(In the get methods, it's returning the value of our "String breed, gender, environment,
+  & diet;, as well as our int lifespan, and double weight;")*/
+  public String getBreed(){
+      return breed;
+  }
+  public String getGender(){
+        return gender;
+    }
+    public double getWeight(){
+        return weight;
+    }
+    public int getLifespan(){
+        return lifespan;
+    }
+    public String getEnvironment(){
+        return environment;
+    }
+    public String getDiet(){
+        return diet;
+    }
+    //Set methods
+    public void setBreed(String breed) {
+        this.breed = breed;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public void setLifespan(int lifespan) {
+        this.lifespan = lifespan;
+    }
+
+    public void setWeight(double weight) {
+        this.weight = weight;
+    }
+
+    public void setEnvironment(String environment) {
+        this.environment = environment;
+    }
+
+    public void setDiet(String diet) {
+        this.diet = diet;
+    }
+
+    // Set this breed in (dog2)(where it's slotted) to the "breed" that is being called
+    // from our object (dog1) or what ever object is in the () using the get method. ex:
+    // dog2.copy(dog1);
+    public void copy(Animal d){ // Copy 'method"
+      this.setBreed(d.getBreed());
+      this.setGender(d.getGender());
+      this.setWeight(d.getWeight());
+      this.setLifespan(d.getLifespan());
+      this.setEnvironment(d.getEnvironment());
+      this.setDiet(d.getDiet());
+    }
+}
