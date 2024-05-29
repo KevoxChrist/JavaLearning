@@ -3,10 +3,10 @@ public class Main {
 
         Animal dog1 = new Animal("German Shepherd", "Male", 65, 12,
                 "House or Apartment with a yard (adaptable to various other " +
-                        "environments", "Omnivore");
+                        "environments).", "Omnivore");
        /*Animal dog2 = new Animal("Eurasian Shepherd", "Female", 40, 12,
                 "Places where they are able to roam around (also adaptable to " +
-                       "various other environments)", "Omnivore");*/
+                       "various other environments).", "Omnivore");*/
 
         //Copy constructor in our object "dog2"
         Animal dog2 = new Animal(dog1);
