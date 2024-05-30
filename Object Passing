@@ -1,0 +1,27 @@
+
+public class Main {
+    public static void main(String[] args) {
+
+    TheHolySpirit h = new TheHolySpirit();
+    Fruit fruit = new Fruit("love");
+    Fruit fruit2 = new Fruit("peace");
+
+    h.gift(fruit);
+    h.gift(fruit2);
+
+    }
+}
+class TheHolySpirit {
+
+    void gift (Fruit fruit){
+        System.out.println(fruit.name+" is a fruit from the Holy Spirit");
+    }
+
+}
+ class Fruit {
+
+    String name;
+    Fruit(String fruit){
+        this.name = fruit;
+    }
+}
