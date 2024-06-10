@@ -1,0 +1,34 @@
+
+public class Main {
+    public static void main(String[] args) {
+
+        //You can make the uncommented runnable lines of code comments (//) and make
+        // the commented runnable code comments (//) to see the difference. Less
+        // code same output going the static way (situations vary for the use of
+        // static). ps. the output should always be 3.
+
+        //Non-Static
+        ///Subway subway = new Subway();
+        //System.out.println("Non-Static: "+ subway.getFootlong());
+
+        //Static
+        System.out.println("Static: "+ Subway.footlong);
+
+        // "Subway" is able to access our "footlong" variable in this print
+        // statement because we made that variable static in the "Subway" class.
+        // This means since we made our variable "footlong" static it has now
+        // become a "static member" of the "Subway" class, making it only
+        // accessible to the "Subway" class itself, personally owning that member.
+
+    }
+}
+ class Subway {
+
+    //Our "static" variable
+    static int footlong = 3;
+    //int footlong = 3;
+
+    /*public int getFootlong (){
+     return footlong;
+    }*/
+}
