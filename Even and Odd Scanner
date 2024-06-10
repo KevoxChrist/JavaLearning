@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter an integer: ");
+        int answer;
+        answer = scanner.nextInt();
+
+        //If "answer" being divided by 2 has a remainder of 0 print...
+        if (answer % 2==0 ){
+            System.out.println("Your integer is even:O");
+        } else //but if "answer" does not have a remainder of 0 print...
+            System.out.println("Your integer is odd :}");
+
+        scanner.close();
+        
+    }
+}
