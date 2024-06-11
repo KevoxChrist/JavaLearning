@@ -1,0 +1,53 @@
+
+public class Main {
+    public static void main(String[] args) {
+
+Worker john = new Worker();
+Tradesperson sara = new Tradesperson();
+Carpenter emmanuel = new Carpenter();
+
+        System.out.println("John: ");
+        john.dowork();
+        System.out.println("");
+        System.out.println("Sara: ");
+        sara.dowork();
+        System.out.println("");
+        System.out.println("Emmanuel: ");
+        emmanuel.dowork();
+        
+    }
+}
+ class Worker {
+
+    public void dowork (){
+        System.out.println("Does IT work, &");
+        workerwages();
+    }
+    private void workerwages (){
+        System.out.println("gets paid monthly.");
+
+    }
+}
+    class Tradesperson extends Worker {
+
+    @Override
+    public void dowork() {
+        System.out.println("Does welding work, &");
+        unionwages();
+    }
+    private void unionwages(){
+        System.out.println("gets paid weekly.");
+
+    }
+}
+    class Carpenter extends Worker {
+
+    @Override
+    public void dowork() {
+        System.out.println("Does woodwork, &");
+        contractwages();
+    }
+    private void contractwages (){
+        System.out.println("gets paid per contract.");
+    }
+}
