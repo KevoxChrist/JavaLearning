@@ -1,0 +1,239 @@
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+Worker john = new Worker("John");
+Tradesperson sara = new Tradesperson("Sara");
+Carpenter emmanuel = new Carpenter("Emmanuel");
+
+        //John
+        System.out.println("John: ");
+        john.dowork();
+        System.out.println(john.name);
+        //Sara
+        System.out.println("\nSara: ");
+        sara.dowork();
+        //Emmanuel
+        System.out.println("\nEmmanuel: ");
+        emmanuel.dowork();
+
+        /*Array of our 3 instantiated objects (john, sara, & emmanuel), classified as
+         a "Worker" from the Worker class
+         */
+        Worker [] workers = {john, sara, emmanuel};
+
+        //Variables for our 3 questions and Bonus question.
+        String worklife;
+        String pay;
+        String career;
+        int schedule;
+
+        //1st question
+        System.out.println("\n\nQUIZ-\nWho has the best work life balance rating " +
+                "among " +
+                "all the workers?");
+            worklife = scanner.nextLine();
+
+        if (worklife.equals(workers[2].toString())|| worklife.equalsIgnoreCase(
+                "emmanuel")){
+            System.out.println("Wow! Nice job! 2 points earned (1/3)");
+        }
+
+        //2nd question
+        System.out.println("\nWhich worker gets paid 'Weekly'? ");
+
+            pay = scanner.nextLine();
+            if (pay.equals(workers[1].toString())|| pay.equalsIgnoreCase("sara")){
+                System.out.println("Sara is living THAT life. 2 points earned (2/3)");
+            }
+
+        //3rd question
+        System.out.println("\nWhich worker works in the Tech field?");
+            career = scanner.nextLine();
+        if (career.equals(workers[0].toString())|| career.equalsIgnoreCase("john")){
+            System.out.println("John John John, does he work for apple? 2 points " +
+                    "earned (3/3)");
+            System.out.println("CONGRATULATIONS!!:) SCORE: 100%");
+        }
+
+        //BONUS question
+        System.out.println("\nBONUS:");
+        System.out.println("How many workers work Monday-Friday?");
+            schedule = scanner.nextInt();
+
+        if (schedule==2){
+            System.out.println("");
+            //ASCII art
+            try {
+                FileReader reader = new FileReader("chickendinner.txt");
+                int data = reader.read();
+                while (data !=-1){
+                    System.out.print((char) data);
+                    data= reader.read();
+                }
+                scanner.close();
+            } catch (IOException e){
+                e.printStackTrace();
+            }
+        }
+
+
+    }
+}
+class Worker {
+
+    String name;
+
+    Worker (String name){
+        this.name = name;
+    }
+
+    Worker (){}
+
+    public void dowork (){
+        salary(); //Overridden
+        job();// Overridden
+        wage();// Overridden
+        workdays();//Overridden
+        worklifebalance();// Overridden
+    }
+    public void salary(){
+        System.out.println("Yearly Salary: $110,000");
+    }
+
+    public void job(){
+        System.out.println("Work: Network Engineer");
+    }
+
+    public void wage(){
+        System.out.println("Pay Period: Monthly");
+    }
+
+    public void workdays(){
+        System.out.println("Workdays: Monday-Friday");
+    }
+
+    public void worklifebalance (){
+        System.out.println("W/L Balance: 8/10");
+    }
+
+    //Returns the text of my string with this method instead of a memory
+    // address when I call the string from my instantiated object without this
+    // method.
+    public String toString (){
+        return name;
+    }
+
+}
+class Tradesperson extends Worker {
+
+    String name;
+
+    Tradesperson (){}
+
+    Tradesperson (String name){
+        this.name= name;
+    }
+
+    @Override
+    public void dowork() {
+        super.dowork(); /* Calling the dowork() method from the Superclass "Worker".
+        The dowork() method in "Worker" has methods inside of it such as salary, job,
+        wage, workdays, & worklifebalance (which you see are overridden in this
+        "Tradeperson" class as well as our "Carpenter" (a subclass of
+        "Tradesperson") class). When we call the  super keyword here "super.dowork();"
+        in "Tradesperson" it's calling the method from "Worker" & the dowork()
+        method that is overridden from "Worker", will output the most recent use
+        case of the method based on the object type. So if a method is overridden,
+        and I create an object from my "Tradesperson" class the most recent use
+        case of that method (dowork();) in that class will be outputted.
+
+        In this case our overridden method/s salary, job, wage, workdays, &
+        worklifebalance in "Tradesperson" will be outputted since we
+        have all the same methods that are inside the dowork() method in "Worker".
+        Moreover, this is being called in Tradesperson with the super keyword "super
+        .dowork ();".
+        */
+    }
+
+    @Override
+    public void salary() {
+        System.out.println("Yearly Salary: $62,000");
+    }
+
+    @Override
+    public void job() {
+        System.out.println("Work: Welding");
+    }
+    @Override
+    public void wage(){
+        System.out.println("Pay Period: Weekly");
+    }
+
+    @Override
+    public void workdays() {
+        System.out.println("Workdays: Monday-Thursday");
+
+    }
+
+    @Override
+    public void worklifebalance() {
+        System.out.println("W/L Balance: 9/10");
+    }
+
+    @Override
+    public String toString() {
+        return name;
+    }
+}
+class Carpenter extends Tradesperson {
+
+    String name;
+
+    Carpenter (String name) {
+        this.name = name;
+    }
+    @Override
+    public void dowork() {
+        super.dowork(); /*Essentially the same thing as what was previously stated
+         in the "Tradesperson" class, but in this case "Tradesperson is the
+         Superclass to "Carpenter", making "Carpenter" a subclass to "Tradesperson".
+         */
+    }
+
+    @Override
+    public void salary() {
+        System.out.println("Yearly Salary: $52,000");
+    }
+
+    @Override
+    public void job() {
+        System.out.println("Work: Woodwork");
+    }
+
+    @Override
+    public void wage(){
+        System.out.println("Pay Period: per Contract");
+
+    }
+
+    @Override
+    public void workdays() {
+        System.out.println("Workdays: Monday-Friday");
+    }
+
+    @Override
+    public void worklifebalance() {
+        System.out.println("W/L Balance: 10/10");
+    }
+
+
+    public String toString() {
+        return name;
+    }
+}
