@@ -1,3 +1,10 @@
+/*Here you will see overridden methods and the use of the super keyword.
+Make sure to download the txt file "chickendinner.txt" in the 
+JavaLearning repository. 
+
+Paste the file into your root project folder and when the code runs
+the Filereader, everything in the file should be displayed as intended!*/
+
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
