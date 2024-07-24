@@ -1,0 +1,40 @@
+public class Main {
+
+    public static void main(String[]args) {
+
+        
+        
+        Integer [] intarray = {1,2,3,4,5,6,7};
+        Double [] doublearray = {3.14,5.7888};
+        String [] stringarray = {"What's good bro"};
+        Character [] characterarray = {'$','u','P','%','^','0'};
+
+
+        /*displayArray(intarray);
+        displayArray(doublearray);
+        displayArray(stringarray);
+        displayArray(characterarray);*/
+
+        System.out.println(getfirst(intarray));
+        System.out.println(getfirst(doublearray));
+        System.out.println(getfirst(stringarray));
+        System.out.println(getfirst(characterarray));
+        
+
+    }
+
+    public static <T> void displayArray(T [] array) {
+
+        for (T x: array){
+            System.out.print(x+" ");
+        }
+        System.out.println();
+
+    }
+
+    public static <T> T getfirst( T [] array){
+
+        return array [0];
+    }
+
+}
